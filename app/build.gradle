@@ -1,0 +1,89 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+repositories {
+    mavenCentral()
+    maven {
+        url "https://dl.bintray.com/elastique/poetry"
+    }
+
+}
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
+    defaultConfig {
+        applicationId "com.eu.parent.hadia.weatherapp"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        pickFirst 'META-INF/ASL2.0'
+        pickFirst 'META-INF/LICENSE'
+        pickFirst 'META-INF/NOTICE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/ASL2.0.txt'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:design:26.+'
+    compile 'com.lapism:searchview:4.0'
+    testCompile 'junit:junit:4.12'
+    // Support Libraries
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile "com.android.support:recyclerview-v7:26.+"
+
+    compile 'com.google.android.gms:play-services-maps:10.2.6'
+
+    compile 'com.google.android.gms:play-services-location:10.2.6'
+
+    compile 'info.android15.nucleus:nucleus:4.0.0'
+    compile 'info.android15.nucleus:nucleus-support-v4:4.0.0'
+    compile 'info.android15.nucleus:nucleus-support-v7:4.0.0'
+
+    provided 'javax.annotation:jsr250-api:1.0'
+
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.8.6'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.8.6'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.6'
+
+    // Retrofit
+    compile "com.squareup.retrofit2:retrofit:2.1.0"
+    compile "com.squareup.retrofit2:converter-gson:2.1.0"
+
+    // Butterknife
+    compile "com.jakewharton:butterknife:8.0.1"
+    apt "com.jakewharton:butterknife-compiler:8.0.1"
+
+    // Lightweight Stream
+    compile 'com.annimon:stream:1.1.2'
+
+    // Dependency Injection
+    apt "com.google.dagger:dagger-compiler:2.2"
+    compile "com.google.dagger:dagger:2.2"
+    provided 'javax.annotation:jsr250-api:1.0'
+    //Database
+
+    compile 'com.j256.ormlite:ormlite-android:4.48'
+//Get city
+    compile 'com.survivingwithandroid:weatherlib:1.6.0'
+    compile 'com.survivingwithandroid:weatherlib_volleyclient:1.6.0'
+    compile 'com.mcxiaoke.volley:library:1.0.6@aar'
+//swipe list
+    compile "com.daimajia.swipelayout:library:1.2.0@aar"
+}
