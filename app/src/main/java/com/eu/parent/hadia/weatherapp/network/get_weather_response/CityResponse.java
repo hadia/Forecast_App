@@ -1,4 +1,4 @@
-package com.eu.parent.hadia.weatherapp.GetWeatherResponse;
+package com.eu.parent.hadia.weatherapp.network.get_weather_response;
 
 import java.util.List;
 

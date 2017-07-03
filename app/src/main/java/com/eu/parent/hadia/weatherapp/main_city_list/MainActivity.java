@@ -1,8 +1,7 @@
-package com.eu.parent.hadia.weatherapp.citylistview;
+package com.eu.parent.hadia.weatherapp.main_city_list;
 
 import android.Manifest;
 import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.IntentSender;
@@ -14,19 +13,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
@@ -42,10 +34,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.eu.parent.hadia.weatherapp.citylistview.adapter.CityAdapter;
+import com.eu.parent.hadia.weatherapp.main_city_list.adapter.CityAdapter;
 import com.eu.parent.hadia.weatherapp.R;
-import com.eu.parent.hadia.weatherapp.citylistview.adapter.OnCityListItemActionsListener;
-import com.eu.parent.hadia.weatherapp.citylistview.addcity.CitySearchAdapter;
+import com.eu.parent.hadia.weatherapp.main_city_list.adapter.OnCityListItemActionsListener;
+import com.eu.parent.hadia.weatherapp.main_city_list.add_city.CitySearchAdapter;
 import com.eu.parent.hadia.weatherapp.model.CityModel;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
@@ -60,10 +52,7 @@ import java.util.List;
 
 import com.lapism.searchview.SearchView;
 import com.survivingwithandroid.weather.lib.WeatherClient;
-import com.survivingwithandroid.weather.lib.WeatherConfig;
-import com.survivingwithandroid.weather.lib.exception.WeatherLibException;
 import com.survivingwithandroid.weather.lib.model.City;
-import com.survivingwithandroid.weather.lib.provider.openweathermap.OpenweathermapProviderType;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -93,7 +82,7 @@ public class MainActivity extends NucleusAppCompatActivity<MainActivityPresenter
     private City currentCity;
     Toolbar toolbar;
     @BindView(R.id.pbHeaderProgress)
-    ProgressBar pbHeaderProgress ;
+    ProgressBar pbHeaderProgress;
 
 
     @Override
@@ -106,8 +95,8 @@ public class MainActivity extends NucleusAppCompatActivity<MainActivityPresenter
         setSupportActionBar(toolbar);
 
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if(isNetworkAvailable())
-             checkLocationPermission();
+            if (isNetworkAvailable())
+                checkLocationPermission();
         }
 
         //Check if Google Play Services Available or not
@@ -143,20 +132,20 @@ public class MainActivity extends NucleusAppCompatActivity<MainActivityPresenter
         cityAdapter.notifyDataSetChanged();
         locationRecyclerView.requestFocus();
         locationRecyclerView.setVisibility(View.VISIBLE);
-        if(pbHeaderProgress!=null)
+        if (pbHeaderProgress != null)
             pbHeaderProgress.setVisibility(View.GONE);
 
     }
 
     /**
      * RemoveLocation
+     *
      * @param postion
      * @param listSize
      */
-    public void bindRemoveLocations(int postion,int listSize)
-    {
-        cityAdapter. notifyItemRemoved(postion);
-        cityAdapter. notifyItemRangeChanged(postion, listSize);
+    public void bindRemoveLocations(int postion, int listSize) {
+        cityAdapter.notifyItemRemoved(postion);
+        cityAdapter.notifyItemRangeChanged(postion, listSize);
         pbHeaderProgress.setVisibility(View.GONE);
     }
 
@@ -279,14 +268,14 @@ public class MainActivity extends NucleusAppCompatActivity<MainActivityPresenter
                     if (ContextCompat.checkSelfPermission(this,
                             Manifest.permission.ACCESS_FINE_LOCATION)
                             == PackageManager.PERMISSION_GRANTED) {
-                        pbHeaderProgress.setVisibility(View.VISIBLE);
-                        if (mGoogleApiClient != null) {
-                            mGoogleApiClient.connect();
 
-                        } else {
-                            buildGoogleApiClient();
-                        }
+                            if (mGoogleApiClient != null&&mGoogleApiClient.isConnected()) {
+                                mGoogleApiClient.disconnect();
+                                mGoogleApiClient.connect();
 
+                            } else {
+                                buildGoogleApiClient();
+                            }
                     }
 
                 } else {
@@ -314,7 +303,9 @@ public class MainActivity extends NucleusAppCompatActivity<MainActivityPresenter
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .build();
-        if (mGoogleApiClient != null) {
+        if (mGoogleApiClient != null && ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
             mGoogleApiClient.connect();
         }
     }
@@ -423,6 +414,7 @@ public class MainActivity extends NucleusAppCompatActivity<MainActivityPresenter
 
     /**
      * request weatherData based on network avialabilty
+     *
      * @param status
      */
     private void requestWeatherData(int status) {
@@ -442,7 +434,7 @@ public class MainActivity extends NucleusAppCompatActivity<MainActivityPresenter
 
 
         }
-        pbHeaderProgress.setVisibility(View.VISIBLE);
+        // pbHeaderProgress.setVisibility(View.VISIBLE);
     }
 
 
@@ -494,9 +486,12 @@ public class MainActivity extends NucleusAppCompatActivity<MainActivityPresenter
         builder.setPositiveButton("Accept", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-                // We update toolbar
-                getPresenter().getCityData(Integer.parseInt(currentCity.getId()), currentCity.getName());
+                if(currentCity!=null) {
+                    dialog.dismiss();
+                    // We update toolbar
+
+                    getPresenter().getCityData(Integer.parseInt(currentCity.getId()), currentCity.getName());
+                }
                 // toolbar.setTitle( + "," + currentCity.getCountry());
                 // Start getting weather
                 //getWeather();

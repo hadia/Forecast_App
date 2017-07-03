@@ -1,6 +1,4 @@
-package com.eu.parent.hadia.weatherapp.citylistview;
-
-import android.content.Context;
+package com.eu.parent.hadia.weatherapp.main_city_list;
 
 import com.survivingwithandroid.weather.lib.WeatherClient;
 

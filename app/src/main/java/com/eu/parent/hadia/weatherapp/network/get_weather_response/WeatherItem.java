@@ -1,4 +1,4 @@
-package com.eu.parent.hadia.weatherapp.GetWeatherResponse;
+package com.eu.parent.hadia.weatherapp.network.get_weather_response;
 
 import com.eu.parent.hadia.weatherapp.common.ResponseModel;
 import com.fasterxml.jackson.annotation.JsonProperty;

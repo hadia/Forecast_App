@@ -1,9 +1,6 @@
 package com.eu.parent.hadia.weatherapp.model;
 
-import com.eu.parent.hadia.weatherapp.Database.CustomDao;
-import com.eu.parent.hadia.weatherapp.GetWeatherResponse.CityResponse;
-import com.eu.parent.hadia.weatherapp.GetWeatherResponse.ListItem;
-import com.eu.parent.hadia.weatherapp.GetWeatherResponse.WeatherItem;
+import com.eu.parent.hadia.weatherapp.network.get_weather_response.CityResponse;
 import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;

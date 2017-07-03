@@ -1,6 +1,6 @@
 package com.eu.parent.hadia.weatherapp.model;
 
-import com.eu.parent.hadia.weatherapp.GetWeatherResponse.ListItem;
+import com.eu.parent.hadia.weatherapp.network.get_weather_response.ListItem;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 

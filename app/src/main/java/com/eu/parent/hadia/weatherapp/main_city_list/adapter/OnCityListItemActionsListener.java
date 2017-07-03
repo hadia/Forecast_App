@@ -1,4 +1,4 @@
-package com.eu.parent.hadia.weatherapp.citylistview.adapter;
+package com.eu.parent.hadia.weatherapp.main_city_list.adapter;
 
 import android.view.View;
 

@@ -1,4 +1,4 @@
-package com.eu.parent.hadia.weatherapp.Database;
+package com.eu.parent.hadia.weatherapp.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

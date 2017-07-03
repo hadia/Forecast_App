@@ -1,4 +1,4 @@
-package com.eu.parent.hadia.weatherapp.citylistview.addcity;
+package com.eu.parent.hadia.weatherapp.main_city_list.add_city;
 
 import android.content.Context;
 import android.view.LayoutInflater;

@@ -1,4 +1,4 @@
-package com.eu.parent.hadia.weatherapp.Database;
+package com.eu.parent.hadia.weatherapp.database;
 
 import com.j256.ormlite.dao.BaseDaoImpl;
 import com.j256.ormlite.support.ConnectionSource;

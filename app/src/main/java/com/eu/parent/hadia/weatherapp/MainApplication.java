@@ -2,11 +2,8 @@
 package com.eu.parent.hadia.weatherapp;
 
 import android.app.Application;
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 
-import com.eu.parent.hadia.weatherapp.Database.DatabaseHelper;
+import com.eu.parent.hadia.weatherapp.database.DatabaseHelper;
 
 
 public class MainApplication extends Application {

@@ -1,14 +1,14 @@
-package com.eu.parent.hadia.weatherapp.citylistview;
+package com.eu.parent.hadia.weatherapp.main_city_list;
 
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.eu.parent.hadia.weatherapp.Database.DeleteCityItem;
-import com.eu.parent.hadia.weatherapp.Database.GetAllCitiesData;
-import com.eu.parent.hadia.weatherapp.Database.SaveCityDataInteractor;
-import com.eu.parent.hadia.weatherapp.Database.SaveWeatherDataInteractor;
-import com.eu.parent.hadia.weatherapp.GetWeatherResponse.CityResponse;
-import com.eu.parent.hadia.weatherapp.citylistview.addcity.CitySearchAdapter;
+import com.eu.parent.hadia.weatherapp.database.DeleteCityItem;
+import com.eu.parent.hadia.weatherapp.database.GetAllCitiesData;
+import com.eu.parent.hadia.weatherapp.database.SaveCityDataInteractor;
+import com.eu.parent.hadia.weatherapp.database.SaveWeatherDataInteractor;
+import com.eu.parent.hadia.weatherapp.network.get_weather_response.CityResponse;
+import com.eu.parent.hadia.weatherapp.main_city_list.add_city.CitySearchAdapter;
 import com.eu.parent.hadia.weatherapp.common.Interactor;
 import com.eu.parent.hadia.weatherapp.common.InteractorSuccessListener;
 import com.eu.parent.hadia.weatherapp.model.CityModel;

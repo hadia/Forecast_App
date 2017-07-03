@@ -1,13 +1,11 @@
-package com.eu.parent.hadia.weatherapp.Database;
+package com.eu.parent.hadia.weatherapp.database;
 
 import android.util.Log;
 
 import com.eu.parent.hadia.weatherapp.common.Interactor;
-import com.eu.parent.hadia.weatherapp.model.CityModel;
 import com.eu.parent.hadia.weatherapp.model.WeatherItemModel;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.QueryBuilder;
-import com.j256.ormlite.stmt.SelectArg;
 
 import java.sql.SQLException;
 

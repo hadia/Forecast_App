@@ -85,5 +85,5 @@ dependencies {
     compile 'com.survivingwithandroid:weatherlib_volleyclient:1.6.0'
     compile 'com.mcxiaoke.volley:library:1.0.6@aar'
 //swipe list
-    compile "com.daimajia.swipelayout:library:1.2.0@aar"
+    compile 'com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.0'
 }

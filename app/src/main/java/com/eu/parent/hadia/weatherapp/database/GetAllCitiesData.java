@@ -1,8 +1,7 @@
-package com.eu.parent.hadia.weatherapp.Database;
+package com.eu.parent.hadia.weatherapp.database;
 
 import android.util.Log;
 
-import com.eu.parent.hadia.weatherapp.GetWeatherResponse.WeatherItem;
 import com.eu.parent.hadia.weatherapp.common.Interactor;
 import com.eu.parent.hadia.weatherapp.model.CityModel;
 import com.eu.parent.hadia.weatherapp.model.WeatherItemModel;

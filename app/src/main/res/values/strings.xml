@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Forcast Today</string>
+    <string name="app_name">Forecast Today</string>
     <string name="action_settings">Settings</string>
     <string name="city_country">Cairo</string>
     <string name="date_today">Friday, 8 July</string>

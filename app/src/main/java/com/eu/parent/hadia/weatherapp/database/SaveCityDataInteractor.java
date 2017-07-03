@@ -1,4 +1,4 @@
-package com.eu.parent.hadia.weatherapp.Database;
+package com.eu.parent.hadia.weatherapp.database;
 
 import android.util.Log;
 
@@ -9,17 +9,17 @@ import com.j256.ormlite.dao.Dao;
 import java.sql.SQLException;
 
 /**
- * Created by hadia on 7/3/17.
+ * Created by hadia on 7/2/17.
  */
 
-public class DeleteCityItem extends Interactor<Integer> {
+public class SaveCityDataInteractor   extends Interactor<Integer> {
 
 
-    int cityID;
+    CityModel cityModel;
     Dao<CityModel, Integer> cityDao;
-    public DeleteCityItem(int cityID) {
+    public SaveCityDataInteractor(CityModel cityModel) {
 
-        this. cityID = cityID;
+        this.cityModel = cityModel;
         DatabaseHelper     helper  =DatabaseHelper.getInstance();
         try {
             cityDao  = helper.getCityDao();
@@ -33,9 +33,9 @@ public class DeleteCityItem extends Interactor<Integer> {
     @Override
     protected Integer onTaskWork() {
         try {
-            int result=cityDao.deleteById(cityID);
-
-            Log.d("WeatherAPP", "delete "+result);
+           int result=cityDao.createOrUpdate(cityModel).getNumLinesChanged();
+            cityDao.refresh(cityModel);
+            Log.d("WeatherAPP", "Insert Or update "+result);
             return result;
         } catch (Exception e) {
             Log.d("WeatherAPP", e.toString());

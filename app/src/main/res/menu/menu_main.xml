@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.eu.parent.hadia.weatherapp.citylistview.MainActivity">
+    tools:context="com.eu.parent.hadia.weatherapp.main_city_list.MainActivity">
     <item
         android:id="@+id/action_search"
         android:icon="@android:drawable/ic_menu_add"
