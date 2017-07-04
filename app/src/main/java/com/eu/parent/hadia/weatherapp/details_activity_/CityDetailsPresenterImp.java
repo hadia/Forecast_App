@@ -49,10 +49,11 @@ public class CityDetailsPresenterImp extends Presenter<CityDetailsActivity> impl
                 if (result != null) {
                     if (getView() != null) {
                         getView().bindCity(result.getName() + "," + result.getCountry());
-                        getView().bindHumidityResult("" + result.getmWeatherModel().get(0).getHumidity());
-                        getView().bindWindResult("" + result.getmWeatherModel().get(0).getSpeed());
+                        getView().bindHumidityResult(result.getmWeatherModel().get(0).getHumidity()+"%");
+                        getView().bindWindResult( result.getmWeatherModel().get(0).getSpeed()+"km/h");
                         getView().bindWeatherImage("" + result.getmWeatherModel().get(0).getIcon());
                         getView().bindWeatherImage("" + result.getmWeatherModel().get(0).getIcon());
+                        getView().bindCityTemp("" + result.getmWeatherModel().get(0).getDay_temp());
                         final List<FiveDaysModel> daysOfTheWeek = new ArrayList<FiveDaysModel>();
                         for (int i = 0; i < 5; i++) {
                             daysOfTheWeek.add(new FiveDaysModel().fill(result.getmWeatherModel().get(i)) );

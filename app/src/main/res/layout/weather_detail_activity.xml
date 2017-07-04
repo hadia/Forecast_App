@@ -24,7 +24,7 @@
             android:text="@string/city_country"
             android:textSize="24sp"
             android:layout_marginTop="16dp"
-            android:textColor="@color/colorWhite"/>
+            android:textColor="@color/cardview_dark_background"/>
 
         <TextView
             android:id="@+id/current_date"
@@ -36,15 +36,27 @@
             android:textSize="14sp"
             android:layout_marginTop="8dp"
             android:textColor="@color/cardview_dark_background"/>
-
-        <ImageView
-            android:id="@+id/weather_icon"
+        <TextView
+            android:id="@+id/current_temp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
+            android:text="@string/date_today"
+            android:textSize="24sp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/cardview_dark_background"/>
+
+        <ImageView
+            android:id="@+id/weather_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+
             android:contentDescription="@string/app_name"
-            android:layout_marginTop="24dp"/>
+            android:gravity="center"
+            android:scaleType="fitCenter" />
 
 
 
@@ -127,16 +139,16 @@
         android:layout_height="0dp"
         android:layout_weight="2"
         android:background="@color/colorBottomBackground"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/weather_daily_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:orientation="vertical"
-            android:scrollbars="none"/>
-
+            android:background="@color/colorBottomBackground"
+            android:orientation="horizontal"
+            android:scrollbars="none" />
     </LinearLayout>
 
 </LinearLayout>

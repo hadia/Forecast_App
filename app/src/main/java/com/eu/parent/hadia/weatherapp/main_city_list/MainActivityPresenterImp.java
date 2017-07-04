@@ -231,7 +231,7 @@ public class MainActivityPresenterImp extends Presenter<MainActivity> implements
 
     @Override
     public void onItemClicked(int postion) {
-        if(getView()!=null) {
+        if(getView()!=null&&(postion<allData.size())) {
             Intent intent = new Intent(getView(), CityDetailsActivity.class);
             intent.putExtra("int_value", allData.get(postion).getId());
             getView().startActivity(intent);

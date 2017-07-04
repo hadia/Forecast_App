@@ -1,6 +1,8 @@
 package com.eu.parent.hadia.weatherapp.details_activity_;
 
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -39,14 +41,22 @@ public class CityDetailsActivity extends NucleusAppCompatActivity<CityDetailsPre
     public TextView windResult;
     @BindView(R.id.humidity_result)
     public TextView humidityResult;
+    @BindView(R.id.current_temp)
+    public TextView cityTemp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.weather_detail_activity);
         ButterKnife.bind(this);
-        getPresenter().requetWeatherData( getIntent().getIntExtra("int_value",0));
+        getPresenter().requetWeatherData(getIntent().getIntExtra("int_value", 0));
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 5);
+        recyclerView.setLayoutManager(gridLayoutManager);
+        recyclerView.setHasFixedSize(true);
+    }
 
+    public void bindCityTemp(String city) {
+        cityTemp.setText(city);
     }
 
     public void bindCity(String city) {
