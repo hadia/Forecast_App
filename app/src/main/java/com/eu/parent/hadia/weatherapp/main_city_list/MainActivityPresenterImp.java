@@ -2,20 +2,19 @@ package com.eu.parent.hadia.weatherapp.main_city_list;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
+import com.eu.parent.hadia.weatherapp.common.Interactor;
+import com.eu.parent.hadia.weatherapp.common.InteractorSuccessListener;
 import com.eu.parent.hadia.weatherapp.database.DeleteCityItem;
 import com.eu.parent.hadia.weatherapp.database.GetAllCitiesData;
 import com.eu.parent.hadia.weatherapp.database.SaveCityDataInteractor;
 import com.eu.parent.hadia.weatherapp.database.SaveWeatherDataInteractor;
 import com.eu.parent.hadia.weatherapp.details_activity_.CityDetailsActivity;
-import com.eu.parent.hadia.weatherapp.network.get_weather_response.CityResponse;
 import com.eu.parent.hadia.weatherapp.main_city_list.add_city.CitySearchAdapter;
-import com.eu.parent.hadia.weatherapp.common.Interactor;
-import com.eu.parent.hadia.weatherapp.common.InteractorSuccessListener;
 import com.eu.parent.hadia.weatherapp.model.CityModel;
 import com.eu.parent.hadia.weatherapp.model.WeatherItemModel;
 import com.eu.parent.hadia.weatherapp.network.GetCityWeatherOnlineInteractor;
+import com.eu.parent.hadia.weatherapp.network.get_weather_response.CityResponse;
 import com.survivingwithandroid.weather.lib.WeatherClient;
 import com.survivingwithandroid.weather.lib.WeatherConfig;
 import com.survivingwithandroid.weather.lib.client.volley.WeatherClientDefault;
@@ -145,7 +144,7 @@ public class MainActivityPresenterImp extends Presenter<MainActivity> implements
                     for (CityModel cityitem :
                             result) {
                         findCityData("", cityitem.getLat(), cityitem.getLon());
-                        Toast.makeText(getView(), "Update Data", Toast.LENGTH_LONG).show();
+                       // Toast.makeText(getView(), "Update Data", Toast.LENGTH_LONG).show();
                     }
                 } else {
                     if (placeID != null && !placeID.isEmpty()) {

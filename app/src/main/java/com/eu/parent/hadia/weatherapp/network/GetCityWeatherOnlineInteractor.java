@@ -2,9 +2,9 @@ package com.eu.parent.hadia.weatherapp.network;
 
 import android.util.Log;
 
-import com.eu.parent.hadia.weatherapp.network.get_weather_response.CityResponse;
 import com.eu.parent.hadia.weatherapp.common.DownloadUrl;
 import com.eu.parent.hadia.weatherapp.common.Interactor;
+import com.eu.parent.hadia.weatherapp.network.get_weather_response.CityResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;

@@ -1,13 +1,10 @@
 package com.eu.parent.hadia.weatherapp.details_activity_;
 
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.eu.parent.hadia.weatherapp.common.Interactor;
 import com.eu.parent.hadia.weatherapp.common.InteractorSuccessListener;
-
 import com.eu.parent.hadia.weatherapp.database.GetCitieDataByID;
-import com.eu.parent.hadia.weatherapp.main_city_list.MainActivity;
 import com.eu.parent.hadia.weatherapp.model.CityModel;
 import com.eu.parent.hadia.weatherapp.model.FiveDaysModel;
 
@@ -16,7 +13,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
-import java.util.TimeZone;
 
 import nucleus.presenter.Presenter;
 

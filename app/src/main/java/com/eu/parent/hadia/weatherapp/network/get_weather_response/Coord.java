@@ -2,6 +2,7 @@ package com.eu.parent.hadia.weatherapp.network.get_weather_response;
 
 import com.eu.parent.hadia.weatherapp.common.ResponseModel;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.annotation.Generated;
 
 @Generated("com.robohorse.robopojogenerator")

@@ -8,11 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
 
 import com.chauthai.swipereveallayout.ViewBinderHelper;
 import com.eu.parent.hadia.weatherapp.R;
@@ -20,18 +15,8 @@ import com.eu.parent.hadia.weatherapp.model.CityModel;
 import com.eu.parent.hadia.weatherapp.model.FiveDaysModel;
 import com.squareup.picasso.Picasso;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
-import java.util.TimeZone;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class CityAdapter extends RecyclerView.Adapter<CityListHolder> {
 

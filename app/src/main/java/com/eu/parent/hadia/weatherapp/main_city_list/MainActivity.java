@@ -11,12 +11,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.widget.AdapterView;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -24,18 +18,22 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-
-
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.eu.parent.hadia.weatherapp.main_city_list.adapter.CityAdapter;
 import com.eu.parent.hadia.weatherapp.R;
+import com.eu.parent.hadia.weatherapp.main_city_list.adapter.CityAdapter;
 import com.eu.parent.hadia.weatherapp.main_city_list.adapter.OnCityListItemActionsListener;
 import com.eu.parent.hadia.weatherapp.main_city_list.add_city.CitySearchAdapter;
 import com.eu.parent.hadia.weatherapp.model.CityModel;
@@ -46,13 +44,12 @@ import com.google.android.gms.location.FusedLocationProviderApi;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import com.lapism.searchview.SearchView;
 import com.survivingwithandroid.weather.lib.WeatherClient;
 import com.survivingwithandroid.weather.lib.model.City;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -2,7 +2,6 @@ package com.eu.parent.hadia.weatherapp.details_activity_;
 
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -18,7 +17,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import nucleus.factory.RequiresPresenter;
-import nucleus.presenter.Presenter;
 import nucleus.view.NucleusAppCompatActivity;
 
 /**
