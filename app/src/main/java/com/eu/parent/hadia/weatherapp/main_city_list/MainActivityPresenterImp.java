@@ -1,5 +1,6 @@
 package com.eu.parent.hadia.weatherapp.main_city_list;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -7,6 +8,7 @@ import com.eu.parent.hadia.weatherapp.database.DeleteCityItem;
 import com.eu.parent.hadia.weatherapp.database.GetAllCitiesData;
 import com.eu.parent.hadia.weatherapp.database.SaveCityDataInteractor;
 import com.eu.parent.hadia.weatherapp.database.SaveWeatherDataInteractor;
+import com.eu.parent.hadia.weatherapp.details_activity_.CityDetailsActivity;
 import com.eu.parent.hadia.weatherapp.network.get_weather_response.CityResponse;
 import com.eu.parent.hadia.weatherapp.main_city_list.add_city.CitySearchAdapter;
 import com.eu.parent.hadia.weatherapp.common.Interactor;
@@ -57,8 +59,6 @@ public class MainActivityPresenterImp extends Presenter<MainActivity> implements
     @Override
     protected void onTakeView(MainActivity mainActivity) {
         super.onTakeView(mainActivity);
-        //  if(getView()!=null)
-        //    getView().bindLocations(cache.getGooglePlaces(),cache.getSquarePlaces());
 
     }
 
@@ -231,6 +231,10 @@ public class MainActivityPresenterImp extends Presenter<MainActivity> implements
 
     @Override
     public void onItemClicked(int postion) {
-
+        if(getView()!=null) {
+            Intent intent = new Intent(getView(), CityDetailsActivity.class);
+            intent.putExtra("int_value", allData.get(postion).getId());
+            getView().startActivity(intent);
+        }
     }
 }
